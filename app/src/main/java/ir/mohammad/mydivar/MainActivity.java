@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId()==R.id.profile){
-                    Toast.makeText(MainActivity.this, "دیوار من", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "دیوار تو", Toast.LENGTH_SHORT).show();
                     openFragment(new profile_fragment());
                     return true;
                 }else if(item.getItemId() == R.id.chat){
