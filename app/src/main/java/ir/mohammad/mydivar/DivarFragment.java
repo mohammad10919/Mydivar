@@ -18,7 +18,9 @@ public class DivarFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<model> item=new ArrayList<>();
     private MyAdapter adapter;
-
+    private List<Horizontal> itm=new ArrayList<>();
+    private HorizontalAdapter hAdapter;
+    private RecyclerView r2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,11 +46,22 @@ public class DivarFragment extends Fragment {
         item.add(new model("آپارتمان 93 متر نوروزیان حکمت زوج","فروش آپارتمان","دوهفته پیش در قزوین","https://s100.divarcdn.com/static/pictures/1624305968/AYQH7LH6.webp"));
         item.add(new model("آپارتمان 130 متری ویلایی تک کلید","فروش آپارتمان","فوری","https://s100.divarcdn.com/static/pictures/1624305091/AYDnZOlc.webp"));
 
-        //repo ro sakhti
-        // valkardi
+        r2 = (RecyclerView) view.findViewById(R.id.r2);
+        hAdapter=new HorizontalAdapter(itm);
+        r2.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        r2.setAdapter(hAdapter);
+
+
+        itm.add(new Horizontal("فروش آپارتمان"));
+        itm.add(new Horizontal("تعیین قیمت کل"));
+        itm.add(new Horizontal("تعیین متراژ"));
+        itm.add(new Horizontal("نمایش عکس دار"));
+        itm.add(new Horizontal("تعیین سن بنا"));
+
 
 
         return view;
     }
+
 
 }

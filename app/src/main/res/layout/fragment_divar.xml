@@ -51,10 +51,18 @@
 <!--    </androidx.cardview.widget.CardView>-->
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/r2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_divar"
         android:layout_width="match_parent"
         android:layout_height="530dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="70dp"
+
         />
 
 

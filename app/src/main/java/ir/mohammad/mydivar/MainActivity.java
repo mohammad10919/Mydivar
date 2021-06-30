@@ -8,20 +8,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
-    private List<Horizontal> itm=new ArrayList<>();
-    private HorizontalAdapter hAdapter;
-    private RecyclerView r2;
+
     private BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,28 +48,20 @@ public class MainActivity extends AppCompatActivity {
                     openFragment(new DivarFragment());
                     return true;
                 }
+
                 return false;
             }
         });
-        r2=findViewById(R.id.r2);
-        hAdapter=new HorizontalAdapter(itm);
-        RecyclerView.LayoutManager lll=new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
-        r2.setLayoutManager(lll);
-        r2.setAdapter(hAdapter);
 
-
-        itm.add(new Horizontal("فروش آپارتمان"));
-        itm.add(new Horizontal("تعیین قیمت کل"));
-        itm.add(new Horizontal("تعیین متراژ"));
-        itm.add(new Horizontal("نمایش عکس دار"));
-        itm.add(new Horizontal("تعیین سن بنا"));
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentlayout,new DivarFragment()).commit();
 
     }
+
 
     private void openFragment(Fragment fragment) {
         FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentlayout,fragment);
         transaction.commit();
-    }
 
+    }
 }
