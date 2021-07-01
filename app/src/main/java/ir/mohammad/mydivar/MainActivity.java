@@ -52,10 +52,11 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
+//        codi ke default ra tagher mide
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentlayout,new DivarFragment()).commit();
 
     }
+
 
 
     private void openFragment(Fragment fragment) {
